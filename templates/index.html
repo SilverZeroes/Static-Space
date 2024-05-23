@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='files/index.css') }}">
+    <title>ArZero</title>
+</head>
+<body>
+    <form action="{{IP}}/upload" enctype="multipart/form-data" method="POST" id="form">
+        <input type="file" name="file[]" id="input" multiple="multiple"  />
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        
+    </script>
+    <h1 style="text-align: center;">Server Online</h1>
+    <div id="qr">
+        <img src="static/files/myqr.svg"  alt="QR Code">
+    </div>
+    <div id="files">
+        <table bgcolor="grey">
+        {% for file in files %}
+            <tr bgcolor="lightgrey"><td><a href="static/{{file}}">{{file}}</a></td></tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div id="home">
+            {% for image in pictures%}
+                <img src="static/{{image}}" class="images" alt="IMG">
+            {% endfor %}
+    </div>
+</body>
+</html>
