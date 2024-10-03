@@ -1,3 +1,7 @@
+#!/bin/python3
+
+# @author: Abdullah Al-Hasani
+# This code can be found on my github: https://github.com/SilverZeroes/Static-Space
 import socket
 import webbrowser
 import pyqrcode
